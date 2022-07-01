@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <h1> hello h5</h1>
+<script>
+  axios({
+    method: 'get',
+    url: 'http://10.249.2.7/wx'
+  }).then(function(response){
+    console.log(response);
+  })
+</script>
+</body>
+</html> -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FastAPI 登录测试</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  </head>
+  <style>.login {display: flex;flex-direction: column;}</style>
+  <body>
+    <div class="login">
+      <div class="item">用户名：<input type="text" name="username" id="uname" /></div>
+      <div class="item">密码：<input type="password" name="password" id="passwd" /></div>
+      <div class="item"><button id="login">登录</button></div>
+      <div class="item"><button id="info">获取用户信息</button></div>
+    </div>
+    <script>
+
+      // 监听点击登录按钮
+      $("#login").click(function () {
+          // 获取用户输入的用户名和密码
+          let userName = $("#uname").val();
+          let passWD = $("#passwd").val();
+          console.log("用户输入的账户和密码", userName, passWD);
+          getToken(userName, passWD);
+      });
+
+      // 获取用户信息
+      $("#info").click(function(){
+          // 从localStorage读取 token
+          let token = localStorage.getItem('token');
+          if(token){
+            var headers = {Authorization: "Bearer " + token};
+              $.ajax({
+                  url: "http://10.249.2.7/users/me",
+                  headers: headers,
+                  success: function(res){
+                      console.log(res);
+                  }
+              })
+          }else{
+              console.log("无权限");
+          }
+      })
+      // 获取token, 并存入本地
+      function getToken(uname, passwd){
+          $.ajax({
+              url: "http://10.249.2.7/token",
+              method: "POST",
+              async: false,
+              data: JSON.stringify({'uname': uname, 'passwd': passwd}),
+              success: function(res){
+                  console.log("获取到的token", res['access_token']);
+                  // 将获取到的token，存入浏览器 localStorage
+                  localStorage.setItem("token", res['access_token']);
+              }
+          })
+      }
+    </script>
+  </body>
+</html>
