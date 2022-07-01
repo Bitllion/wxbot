@@ -54,7 +54,7 @@
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/users/delete
+> http://{ip_addr}/users/delete
 
 #### 请求方式
 > POST
@@ -97,7 +97,7 @@
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/users/register
+> http://{ip_addr}/users/register
 
 #### 请求方式
 > POST
@@ -147,7 +147,7 @@ message | - | String |
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/users/login
+> http://{ip_addr}/users/login
 
 #### 请求方式
 > POST
@@ -195,7 +195,7 @@ password | - | String | 是 | 密码
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/users/update
+> http://{ip_addr}/users/update
 
 #### 请求方式
 > POST
@@ -263,7 +263,7 @@ password | - | String | 是 | 密码
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/helloworld
+> http://{ip_addr}/helloworld
 
 #### 请求方式
 > GET
@@ -323,7 +323,7 @@ password | - | String | 是 | 密码
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/message/update
+> http://{ip_addr}/message/update
 
 #### 请求方式
 > POST
@@ -362,7 +362,7 @@ password | - | String | 是 | 密码
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/message/add
+> http://{ip_addr}/message/add
 
 #### 请求方式
 > POST
@@ -400,7 +400,7 @@ password | - | String | 是 | 密码
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/message/query
+> http://{ip_addr}/message/query
 
 #### 请求方式
 > POST
@@ -449,7 +449,7 @@ password | - | String | 是 | 密码
 > 已完成
 
 #### 接口URL
-> http://10.249.2.7/message/del
+> http://{ip_addr}/message/del
 
 #### 请求方式
 > POST
