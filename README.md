@@ -12,3 +12,19 @@
 - element
 ## 开发进度
 
+## 安装&& 运行
+
+### 后端
+建议先使用conda/python3 venv 创建一个虚拟环境
+
+本项目:python = 3.9.12
+
+#### 1.安装依赖
+```
+pip install -r backend/requirements.txt
+```
+#### 2.运行
+```
+cd backend
+python main.py
+```
